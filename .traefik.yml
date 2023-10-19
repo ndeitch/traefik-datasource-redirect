@@ -1,10 +1,13 @@
-displayName: Provider Plugin Demo
-type: provider
-iconPath: .assets/icon.png
+displayName: Datasource Redirect
+type: middleware
 
-import: github.com/traefik/pluginproviderdemo
+import: github.com/ndeitch/traefik-datasource-redirect
 
-summary: '[Demo] Simple Provider Plugin'
+summary: "Redirect request to specific pod based on header matching values fetched from all pods endpoint"
 
+# Following config will redirect requests to the pod that returned "x-tenant-id" header value on /v1/tenants endpoint
 testData:
-  pollInterval: 5s
+  enabled: true
+  header: "x-tenant-id"
+  serviceName: "products"
+  dataSourceURL: "/v1/tenants"
