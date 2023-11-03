@@ -1,7 +1,7 @@
-displayName: Datasource Redirect
+displayName: Tenant Redirect
 type: middleware
 
-import: github.com/ndeitch/traefik-datasource-redirect
+import: github.com/ndeitch/traefik-tenant-plugin
 
 summary: "Redirect request to specific pod based on header matching values fetched from all pods endpoint"
 
